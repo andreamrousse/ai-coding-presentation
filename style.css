@@ -337,18 +337,18 @@ body {
 
 /* ── DIALOGUE BOX ─────────────────────────────────────────── */
 #dialogue-box {
-  flex-shrink: 0; height: 195px;
+  flex-shrink: 0; height: 260px;
   background: #00004e; border-top: 4px solid #6666cc;
   padding: 14px 20px 8px; overflow: hidden;
 }
 #dialogue-title {
-  font-size: 9px; color: #ffdd00; letter-spacing: 1px;
+  font-size: 10px; color: #ffdd00; letter-spacing: 1px;
   border-bottom: 1px solid #222255; padding-bottom: 8px; margin-bottom: 10px;
-  min-height: 20px;
+  min-height: 22px;
 }
 #dialogue-body {
-  font-size: 8px; color: #d8d8d8; line-height: 1.9;
-  overflow-y: auto; max-height: 125px;
+  font-size: 9.5px; color: #d8d8d8; line-height: 2;
+  overflow-y: auto; max-height: 190px;
 }
 #dialogue-body::-webkit-scrollbar       { width: 5px; }
 #dialogue-body::-webkit-scrollbar-track { background: #000; }
@@ -360,11 +360,11 @@ body {
 #dialogue-body .hi  { color: #00ff88; }
 #dialogue-body .warn{ color: #ffaa00; }
 #dialogue-body .bad { color: #ff4444; }
-#dialogue-body .dim { color: #444466; font-size: 6px; }
+#dialogue-body .dim { color: #444466; font-size: 7.5px; }
 
 /* typewriter text (boss screen) */
 #dialogue-body .tw-text {
-  font-size: 7px; color: #ff8888; line-height: 2.1;
+  font-size: 8.5px; color: #ff8888; line-height: 2.1;
 }
 .cursor-blink::after { content: '▌'; animation: blink 0.5s steps(1) infinite; color: #ff8888; }
 
@@ -410,8 +410,8 @@ body {
 
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-height: 650px) {
-  #dialogue-box { height: 155px; }
-  #dialogue-body { max-height: 90px; }
+  #dialogue-box { height: 200px; }
+  #dialogue-body { max-height: 130px; }
   #hud { height: 56px; padding: 5px 14px 4px; gap: 3px; }
   #hud-timeline-wrap { height: 14px; }
   #nav-bar { height: 40px; }
