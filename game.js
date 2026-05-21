@@ -495,6 +495,36 @@ function buildVictory() {
   const msg = el('div', 'v-msg', '');
   msg.innerHTML = '★  APP DEPLOYED  ★<br><span style="font-size:0.6em;color:#aaffcc">kid recovering · dad back in charge</span>';
   obstacleLayer.appendChild(msg);
+
+  // Kid avatar
+  const kid = document.createElement('div');
+  kid.className = 'kid-avatar-wrap';
+  kid.innerHTML = `
+    <svg class="kid-svg" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg">
+      <!-- hair -->
+      <rect x="3" y="0" width="8" height="2" fill="#c8860a"/>
+      <!-- head -->
+      <rect x="3" y="1" width="8" height="6" fill="#F5C97A"/>
+      <!-- eyes -->
+      <rect x="5" y="3" width="1" height="1" fill="#1a1a1a"/>
+      <rect x="8" y="3" width="1" height="1" fill="#1a1a1a"/>
+      <!-- smile -->
+      <rect x="5" y="6" width="1" height="1" fill="#1a1a1a"/>
+      <rect x="6" y="7" width="2" height="1" fill="#1a1a1a"/>
+      <rect x="8" y="6" width="1" height="1" fill="#1a1a1a"/>
+      <!-- body -->
+      <rect x="3" y="7" width="8" height="5" fill="#ff6688"/>
+      <!-- arms -->
+      <rect x="1" y="8" width="2" height="3" fill="#ff6688"/>
+      <rect x="11" y="8" width="2" height="3" fill="#ff6688"/>
+      <!-- legs -->
+      <rect x="3" y="12" width="3" height="5" fill="#4455CC"/>
+      <rect x="8" y="12" width="3" height="5" fill="#4455CC"/>
+      <!-- feet -->
+      <rect x="2" y="17" width="4" height="2" fill="#333"/>
+      <rect x="8" y="17" width="4" height="2" fill="#333"/>
+    </svg>`;
+  obstacleLayer.appendChild(kid);
 }
 
 function buildPodium() {
