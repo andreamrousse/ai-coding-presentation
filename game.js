@@ -100,8 +100,7 @@ const screens = [
   {
     id: 7, section: 3, sectionName: 'HOW I BUILT IT',
     background: 'scene-boss', avatarState: 'hurt',
-    isBoss: true, image: 'manager-message.png', imageLabel: 'EVIDENCE: THE MESSAGE',
-    typewriter: true, health: 68, day: 5, daysLeft: 9, phase: 'TECH SETUP',
+    isBoss: true, typewriter: true, msgIcon: true, health: 68, day: 5, daysLeft: 9, phase: 'TECH SETUP',
     dialogue: {
       title: '— ⚠ INCOMING — MANAGER MESSAGE —',
       body: `<span class="tw-text" id="tw-target"></span>`,
@@ -342,7 +341,18 @@ function renderScreen(index) {
 
   // Evidence image
   evidenceLayer.innerHTML = '';
-  if (s.image) {
+  if (s.msgIcon) {
+    evidenceLayer.innerHTML = `
+      <div class="msg-icon-wrap">
+        <svg class="msg-icon-svg" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="3" width="30" height="18" fill="#1a1a6e" stroke="#6666cc" stroke-width="2"/>
+          <polyline points="1,3 16,14 31,3" fill="none" stroke="#aaaaff" stroke-width="2"/>
+          <rect x="23" y="0" width="8" height="8" fill="#ff2200"/>
+          <rect x="25" y="2" width="4" height="3" fill="#fff"/>
+          <rect x="26" y="6" width="2" height="1" fill="#fff"/>
+        </svg>
+      </div>`;
+  } else if (s.image) {
     const src = `images/${s.image}`;
     const wrap = document.createElement('div');
     wrap.className = 'evidence-polaroid';

@@ -387,6 +387,28 @@ body {
 #btn-next:hover  { background: #ffdd00; color: #000; }
 #nav-hint        { font-size: 7px; color: #333; letter-spacing: 1px; }
 
+/* ── MESSAGE ICON ─────────────────────────────────────────── */
+.msg-icon-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  pointer-events: none;
+}
+.msg-icon-svg {
+  width: 120px; height: 90px;
+  image-rendering: pixelated;
+  animation: msg-bounce 0.6s steps(2) infinite alternate;
+  filter: drop-shadow(0 0 10px rgba(100,100,255,0.8));
+}
+@keyframes msg-bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-12px); }
+}
+.msg-icon-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px; color: #ff2200;
+  animation: blink-fast 0.35s steps(1) infinite;
+  letter-spacing: 1px;
+}
+
 /* ── EVIDENCE POLAROID ────────────────────────────────────── */
 .evidence-polaroid {
   background: #f5f5f5; padding: 10px 10px 36px 10px;
