@@ -83,7 +83,6 @@ const screens = [
         <li>Defined + prioritised UX metrics</li>
         <li>Reviewed the current dashboard</li>
         <li>Scoped the new version</li>
-        <li>Drafted new Snowflake queries</li>
         <li>Discussed feasibility with tech team</li>
       </ul>
       <br>
