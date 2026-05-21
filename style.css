@@ -408,7 +408,7 @@ body {
 #dialogue-body .hi  { color: #00ff88; }
 #dialogue-body .warn{ color: #ffaa00; }
 #dialogue-body .bad { color: #ff4444; }
-#dialogue-body .dim { color: #444466; font-size: 7.5px; }
+#dialogue-body .dim { color: #8888aa; font-size: 7.5px; }
 
 /* typewriter text (boss screen) */
 #dialogue-body .tw-text {
