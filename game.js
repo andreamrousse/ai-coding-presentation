@@ -235,7 +235,7 @@ const screens = [
       <ul>
         <li>Define <span class="warn">new guidelines</span> for non-developer deployments</li>
         <li>Decide: can this app live in <span class="warn">current company infrastructure</span> — or does it need its own?</li>
-        <li>Connect <span class="hi">real Snowflake data</span></li>
+        <li>Connect <span class="hi">real data</span></li>
         <li>Add more metrics</li>
       </ul>
       <br>
