@@ -249,7 +249,7 @@ const screens = [
     background: 'scene-podium', avatarState: 'victory',
     isFinal: true, health: 100, day: 14, daysLeft: 0, phase: 'DELIVERED',
     dialogue: {
-      title: '— THANKS FOR PLAYING —',
+      title: '— ACHIEVEMENT UNLOCKED —',
       body: `<span class="hi">AI Coding for Designers</span><br>
       Capstone Project · 2026<br>
       <br>
@@ -304,7 +304,7 @@ function renderScreen(index) {
   // Avatar state + position
   avatarWrap.className = 'avatar-' + s.avatarState;
   if (s.isFinal) {
-    avatarWrap.style.left = '48%';
+    avatarWrap.style.left = '18%';
   } else if (s.isPivot) {
     avatarWrap.style.left = '15%';
     setTimeout(() => { avatarWrap.style.left = '62%'; }, 400);
@@ -372,6 +372,15 @@ function renderScreen(index) {
 
   // Back button visibility
   btnBack.style.visibility = index === 0 ? 'hidden' : 'visible';
+
+  // Final screen: hide continue button and hint
+  if (s.isFinal) {
+    btnNext.style.visibility = 'hidden';
+    navHint.style.visibility = 'hidden';
+  } else {
+    btnNext.style.visibility = 'visible';
+    navHint.style.visibility = 'visible';
+  }
 }
 
 // ─── SCENE BUILDER ────────────────────────────────────────────────────────────
@@ -385,7 +394,7 @@ function buildScene(s) {
   if (s.isPivot)     buildPivot();
   if (s.isBoss)      buildBossWarning();
   if (s.isVictory)   buildVictory();
-  if (s.isFinal)     buildPodium();
+  if (s.isFinal)     { buildPodium(); buildConfetti(); }
 }
 
 function buildStars() {
@@ -490,9 +499,34 @@ function buildVictory() {
 
 function buildPodium() {
   const p = document.createElement('div');
-  p.className = 'podium';
-  p.innerHTML = `<div class="podium-top">PRESENTED</div><div class="podium-base"></div>`;
+  p.className = 'dev-card';
+  p.innerHTML = `
+    <div class="dev-card-inner">
+      <div class="dev-card-header">// CERTIFIED</div>
+      <div class="dev-card-title">AI-SSISTED<br>DEVELOPER</div>
+      <div class="dev-card-divider"></div>
+      <div class="dev-card-field">CLASS&nbsp;&nbsp;<span>UX · FULL STACK · SURVIVOR</span></div>
+      <div class="dev-card-field">STACK&nbsp;&nbsp;<span>SvelteKit · Drizzle · Neon</span></div>
+      <div class="dev-card-field">STATUS <span class="dev-card-green">■ SHIPPED</span></div>
+    </div>`;
   obstacleLayer.appendChild(p);
+}
+
+function buildConfetti() {
+  const colors = ['#ffdd00','#00ff88','#ff4444','#4488ff','#ff88ff','#ffffff'];
+  for (let i = 0; i < 40; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti-piece';
+    const size = 4 + Math.floor(Math.random() * 5);
+    c.style.cssText = `
+      left:${Math.random() * 100}%;
+      width:${size}px; height:${size}px;
+      background:${colors[Math.floor(Math.random() * colors.length)]};
+      animation-delay:${(Math.random() * 3).toFixed(2)}s;
+      animation-duration:${(2.5 + Math.random() * 2).toFixed(2)}s;
+    `;
+    obstacleLayer.appendChild(c);
+  }
 }
 
 // Helper: create element with class and inline styles

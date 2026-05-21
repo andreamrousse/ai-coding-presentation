@@ -278,10 +278,49 @@ body {
   animation: blink 0.6s steps(1) infinite;
 }
 
-/* Podium */
-.podium { position: absolute; bottom: 40%; left: 50%; transform: translateX(-50%); }
-.podium-top  { width: 130px; height: 36px; background: #2a2a44; border: 3px solid #5555aa; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #ffdd00; }
-.podium-base { width: 150px; height: 18px; background: #333355; border: 3px solid #5555aa; border-top: none; }
+/* ── CONFETTI ─────────────────────────────────────────────── */
+.confetti-piece {
+  position: absolute; top: -10px;
+  image-rendering: pixelated;
+  animation: confetti-fall linear infinite;
+}
+@keyframes confetti-fall {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* Dev card (final screen) */
+.dev-card {
+  position: absolute; bottom: 42%; left: 50%; transform: translateX(-50%);
+  animation: card-float 1.8s ease-in-out infinite alternate;
+}
+@keyframes card-float {
+  from { transform: translateX(-50%) translateY(0); }
+  to   { transform: translateX(-50%) translateY(-10px); }
+}
+.dev-card-inner {
+  width: 220px; background: #0a0a2e;
+  border: 3px solid #ffdd00;
+  box-shadow: 4px 4px 0 #996600, 0 0 18px rgba(255,221,0,0.25);
+  padding: 12px 14px 14px;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.dev-card-header {
+  font-size: 7px; color: #444466; letter-spacing: 2px;
+}
+.dev-card-title {
+  font-size: 13px; color: #ffdd00; line-height: 1.5;
+  text-shadow: 2px 2px 0 #996600;
+}
+.dev-card-divider {
+  height: 2px; background: #222255;
+}
+.dev-card-field {
+  font-size: 6px; color: #6666aa; letter-spacing: 1px;
+}
+.dev-card-field span { color: #aaaaff; }
+.dev-card-green { color: #00ff88 !important; }
 
 /* Stars (title bg) */
 .star { position: absolute; width: 2px; height: 2px; background: #fff; }
