@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX Quest — The Dashboard Chronicles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="game">
+
+    <!-- HUD / TIMELINE -->
+    <div id="hud">
+      <div id="hud-top-row">
+        <span id="hud-phase"></span>
+        <span id="hud-counter"></span>
+        <span id="hud-days-left"></span>
+      </div>
+      <div id="hud-timeline-wrap">
+        <div id="timeline-track">
+          <div class="tl-seg seg-define"   data-label="DEFINE"></div>
+          <div class="tl-seg seg-tech"     data-label="TECH SETUP"></div>
+          <div class="tl-seg seg-build"    data-label="BUILD"></div>
+          <div class="tl-seg seg-gauntlet" data-label="GAUNTLET"></div>
+          <div id="tl-ticks"></div>
+          <div id="tl-marker">▼</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE -->
+    <div id="scene">
+      <div id="scene-bg"></div>
+      <div id="obstacle-layer"></div>
+      <div id="evidence-layer"></div>
+      <div id="avatar-wrap">
+        <svg id="avatar-svg" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- head -->
+          <rect x="5" y="0" width="6" height="6" fill="#F5C97A"/>
+          <rect x="6" y="2" width="1" height="2" fill="#1a1a1a"/>
+          <rect x="9" y="2" width="1" height="2" fill="#1a1a1a"/>
+          <rect x="6" y="5" width="4" height="1" fill="#1a1a1a"/>
+          <!-- body -->
+          <rect x="4" y="6" width="8" height="6" fill="#4455CC"/>
+          <!-- arms -->
+          <rect x="1" y="7" width="3" height="4" fill="#4455CC"/>
+          <rect x="12" y="7" width="3" height="4" fill="#4455CC"/>
+          <!-- legs -->
+          <rect class="leg-l" x="4" y="12" width="3" height="7" fill="#1a1a5e"/>
+          <rect class="leg-r" x="9" y="12" width="3" height="7" fill="#1a1a5e"/>
+          <!-- feet -->
+          <rect class="foot-l" x="3" y="19" width="5" height="3" fill="#333"/>
+          <rect class="foot-r" x="8" y="19" width="5" height="3" fill="#333"/>
+        </svg>
+      </div>
+      <div id="boss-flash"></div>
+    </div>
+
+    <!-- TITLE OVERLAY (screen 1 only) -->
+    <div id="title-overlay" class="hidden">
+      <div id="title-logo">UX<br>QUEST</div>
+      <div id="title-sub">THE DASHBOARD CHRONICLES</div>
+      <div id="title-blink">▸ PRESS SPACE TO START ◂</div>
+      <div id="title-credit">AI CODING FOR DESIGNERS · 2026</div>
+    </div>
+
+    <!-- DIALOGUE BOX -->
+    <div id="dialogue-box">
+      <div id="dialogue-title"></div>
+      <div id="dialogue-body"></div>
+    </div>
+
+    <!-- NAV BAR -->
+    <div id="nav-bar">
+      <button id="btn-back">◂ BACK</button>
+      <div id="nav-hint">SPACE TO CONTINUE</div>
+      <button id="btn-next">CONTINUE ▸</button>
+    </div>
+
+  </div><!-- /#game -->
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" hidden>
+    <div id="lightbox-backdrop"></div>
+    <div id="lightbox-inner">
+      <img id="lightbox-img" src="" alt="Evidence">
+      <button id="lightbox-close">✕ CLOSE</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
