@@ -103,7 +103,7 @@ const screens = [
     dialogue: {
       title: '— ⚠ INCOMING — MEETING REQUEST —',
       body: `<span class="tw-text" id="tw-target"></span>`,
-      twText: `CALENDAR SYSTEM · AUTO-NOTIFICATION\n──────────────────────\nNEW MEETING SCHEDULED\nSUBJECT: Dashboard — Tech Review\nGOAL: Align on technical setup and infrastructure for the new UX dashboard\nATTENDEES: UX Designer · Engineering Team\nSTATUS: Pending confirmation`,
+      twText: `NEW MEETING SCHEDULED\nSUBJECT: Dashboard — Tech Review\nGOAL: Align on technical setup and infrastructure for the new UX dashboard\nATTENDEES: UX Designer · Engineering Team\nSTATUS: Pending confirmation`,
       twSuffix: `<br><br><span class="warn">Verdict: new guidelines needed for non-developers deploying outside approved company infrastructure.</span><br><br><span class="dim">Nothing like a meeting to remind you that shipping fast has paperwork.</span>`,
     },
   },
