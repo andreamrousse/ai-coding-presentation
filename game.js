@@ -192,7 +192,7 @@ const screens = [
       <br>
       <span class="warn">SIDE QUEST UNLOCKED:</span> new company guidelines for non-developers deploying outside approved infrastructure.<br>
       <br>
-      <span class="warn">▸ Click the cabinet to open the app</span><br>
+      <span class="warn">▸ Click the button to open the app</span><br>
       <br>
       <span class="dim">Why ship just an app when you can ship an entire company policy?</span>`,
     },
@@ -373,7 +373,8 @@ function buildScene(s) {
   if (s.isMap)       buildMap();
   if (s.obstacle === 'gate') buildGate();
   if (s.obstacle === 'pit')  buildPit();
-  if (s.isDemo || s.isLiveDemo) buildCabinet(s.isLiveDemo);
+  if (s.isDemo) buildCabinet(false);
+  if (s.isLiveDemo) buildOpenButton();
   if (s.isPivot)     buildPivot();
   if (s.isBoss)      buildBossWarning();
   if (s.isVictory)   buildVictory();
@@ -452,6 +453,17 @@ function buildCabinet(withButton) {
     c.querySelector('.cabinet-screen').style.cursor = 'pointer';
   }
   obstacleLayer.appendChild(c);
+}
+
+function buildOpenButton() {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'position:absolute;bottom:42%;left:50%;transform:translateX(-50%);';
+  const btn = document.createElement('button');
+  btn.className = 'open-app-btn';
+  btn.textContent = '▶ OPEN APP';
+  btn.addEventListener('click', e => { e.stopPropagation(); window.open(NETLIFY_URL, '_blank'); });
+  wrap.appendChild(btn);
+  obstacleLayer.appendChild(wrap);
 }
 
 function buildPivot() {
