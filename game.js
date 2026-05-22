@@ -101,9 +101,9 @@ const screens = [
     background: 'scene-boss', avatarState: 'hurt',
     isBoss: true, typewriter: true, msgIcon: true, health: 68, day: 5, daysLeft: 9, phase: 'TECH SETUP',
     dialogue: {
-      title: '— ⚠ INCOMING — MANAGER MESSAGE —',
+      title: '— ⚠ INCOMING — MEETING REQUEST —',
       body: `<span class="tw-text" id="tw-target"></span>`,
-      twText: `"Hey, could we set up a meeting with the Head of Engineering about the dashboard? There seem to be some questions around where it should be hosted. Not entirely sure what the concern is — probably worth aligning before we go further."`,
+      twText: `CALENDAR SYSTEM · AUTO-NOTIFICATION\n──────────────────────\nNEW MEETING SCHEDULED\nSUBJECT: Dashboard — Tech Review\nGOAL: Align on technical setup and infrastructure for the new UX dashboard\nATTENDEES: UX Designer · Engineering Team\nSTATUS: Pending confirmation`,
       twSuffix: `<br><br><span class="warn">Verdict: new guidelines needed for non-developers deploying outside approved company infrastructure.</span><br><br><span class="dim">Nothing like a meeting to remind you that shipping fast has paperwork.</span>`,
     },
   },
