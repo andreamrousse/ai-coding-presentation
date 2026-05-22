@@ -34,25 +34,7 @@ const screens = [
     },
   },
 
-  // ══ SECTION 2: THE DEMO ═══════════════════════════════════════════════════
-
-  {
-    id: 3, section: 2, sectionName: 'THE DEMO',
-    background: 'scene-demo', avatarState: 'walking',
-    isLiveDemo: true, health: 100, day: 14, daysLeft: 0, phase: 'DELIVERED',
-    dialogue: {
-      title: '— LIVE APP —',
-      body: `<ul>
-        <li>UX metrics dashboard</li>
-        <li>Filter by app, account, subaccount, region, country + date range</li>
-        <li>Jira initiatives linked to specific metric + app</li>
-      </ul>
-      <br>
-      <span class="warn">▸ Click the cabinet to open the app</span><br>
-      <br>
-      <span class="dim">If it works in the demo, it counts as working.</span>`,
-    },
-  },
+  // ══ SECTION 2: THE DEMO — merged into shipped screen ══════════════════════
 
   // ══ SECTION 3: HOW I BUILT IT ═════════════════════════════════════════════
 
@@ -201,7 +183,7 @@ const screens = [
   {
     id: 14, section: 3, sectionName: 'HOW I BUILT IT',
     background: 'scene-victory', avatarState: 'victory',
-    isVictory: true, health: 100, day: 14, daysLeft: 0, phase: 'DELIVERED',
+    isVictory: true, isLiveDemo: true, health: 100, day: 14, daysLeft: 0, phase: 'DELIVERED',
     dialogue: {
       title: '— ✓ SHIPPED —',
       body: `Despite the infrastructure meeting. The Git chaos. The broken chart. The simulacrum data. The sick kid. The very busy manager-dad.<br>
@@ -209,6 +191,8 @@ const screens = [
       <span class="hi">The app is live.</span> On personal infrastructure. With representative data. Looking suspiciously professional.<br>
       <br>
       <span class="warn">SIDE QUEST UNLOCKED:</span> new company guidelines for non-developers deploying outside approved infrastructure.<br>
+      <br>
+      <span class="warn">▸ Click the cabinet to open the app</span><br>
       <br>
       <span class="dim">Why ship just an app when you can ship an entire company policy?</span>`,
     },
